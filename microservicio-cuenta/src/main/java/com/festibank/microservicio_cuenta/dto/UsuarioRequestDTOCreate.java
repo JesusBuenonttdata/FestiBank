@@ -1,21 +1,15 @@
-package com.festibank.microservicio_cuenta.model;
+package com.festibank.microservicio_cuenta.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-//@Entity
-//@Table(name = "usuarios")
-public class Usuario {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Long id;
+public class UsuarioRequestDTOCreate {
 
     private String nombre;
     private String apellidos;
