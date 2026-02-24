@@ -18,5 +18,5 @@ public class UsuarioRequestDTO {
     private String pais;
     private String localidad;
     private LocalDate fechaNacimiento;
-    private String password;
+
 }
