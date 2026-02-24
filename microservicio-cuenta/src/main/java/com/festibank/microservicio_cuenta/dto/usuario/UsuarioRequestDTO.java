@@ -1,4 +1,4 @@
-package com.festibank.microservicio_cuenta.dto;
+package com.festibank.microservicio_cuenta.dto.usuario;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioRequestDTOCreate {
+public class UsuarioRequestDTO {
 
     private String nombre;
     private String apellidos;
@@ -18,6 +18,5 @@ public class UsuarioRequestDTOCreate {
     private String pais;
     private String localidad;
     private LocalDate fechaNacimiento;
-    private String nombreCuenta;
-    private String password;
+
 }

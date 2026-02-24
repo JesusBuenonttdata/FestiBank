@@ -1,9 +1,9 @@
-package com.festibank.microservicio_cuenta.service;
+package com.festibank.microservicio_cuenta.service.usuario;
 
-import com.festibank.microservicio_cuenta.dto.UsuarioDTO;
-import com.festibank.microservicio_cuenta.dto.UsuarioRequestDTO;
-import com.festibank.microservicio_cuenta.dto.UsuarioRequestDTOCreate;
-import com.festibank.microservicio_cuenta.dto.UsuarioResponseDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.UsuarioDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTOCreate;
+import com.festibank.microservicio_cuenta.dto.usuario.UsuarioResponseDTO;
 
 public interface IUsuarioService {
 
