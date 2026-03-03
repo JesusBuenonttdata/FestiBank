@@ -1,5 +1,6 @@
 package com.festibank.microservicio_cuenta.dto.cuenta;
 
+import com.festibank.microservicio_cuenta.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -20,4 +20,6 @@ public class UsuarioRequestDTOCreate {
     private LocalDate fechaNacimiento;
     private String nombreCuenta;
     private String password;
+    private String tipoCuenta;
+
 }

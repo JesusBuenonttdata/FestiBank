@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,6 +27,9 @@ public class Usuario {
     private String pais;
     private String localidad;
     private LocalDate fechaNacimiento;
-    private String nombreCuenta;
     private String password;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Cuenta> cuentaList;
+
 }

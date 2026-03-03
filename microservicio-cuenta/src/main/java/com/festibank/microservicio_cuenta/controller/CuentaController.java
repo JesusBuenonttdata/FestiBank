@@ -1,9 +1,6 @@
 package com.festibank.microservicio_cuenta.controller;
 
-import com.festibank.microservicio_cuenta.dto.cuenta.CuentaDTO;
-import com.festibank.microservicio_cuenta.dto.cuenta.CuentaRequestDTO;
-import com.festibank.microservicio_cuenta.dto.cuenta.CuentaRequestDTOCreate;
-import com.festibank.microservicio_cuenta.dto.cuenta.CuentaResponseDTO;
+import com.festibank.microservicio_cuenta.dto.cuenta.*;
 import com.festibank.microservicio_cuenta.service.cuenta.ICuentaService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RestController("/cuenta")
+@RestController
+@RequestMapping("/cuenta")
 public class CuentaController {
 
     @Autowired
@@ -21,7 +18,7 @@ public class CuentaController {
 
     @GetMapping("/{id}")
     @Operation(description = "Obtiene una cuenta con toda su información.")
-    public ResponseEntity<CuentaResponseDTO> detalle(@PathVariable Long id) {
+    public ResponseEntity<CuentaResponseDTOView> detalle(@PathVariable Long id) {
         return ResponseEntity.ok(service.detallePorId(id));
     }
 
@@ -33,12 +30,12 @@ public class CuentaController {
         return ResponseEntity.ok(service.detallePorNombrePassword(cuentaDTO));
     }
 
-    @PostMapping
-    @Operation(description = "Crea una cuenta")
-    public ResponseEntity<CuentaResponseDTO> crear(
-            @RequestBody CuentaRequestDTOCreate cuentaRequestDTOCreate) {
-        return new ResponseEntity<>(service.crear(cuentaRequestDTOCreate), HttpStatus.CREATED);
-    }
+//    @PostMapping
+//    @Operation(description = "Crea una cuenta")
+//    public ResponseEntity<CuentaResponseDTO> crear(
+//            @RequestBody CuentaRequestDTOCreate cuentaRequestDTOCreate) {
+//        return new ResponseEntity<>(service.crear(cuentaRequestDTOCreate), HttpStatus.CREATED);
+//    }
 
     @PutMapping("/{id}")
     @Operation(description = "Edita una cuenta solo password y estado")
