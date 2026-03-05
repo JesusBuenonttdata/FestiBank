@@ -1,30 +1,21 @@
-package com.festibank.microservicio_Movimiento.model;
+package com.festibank.microservicio_Movimiento.dto.movimiento;
 
 import com.festibank.microservicio_Movimiento.utils.TipoMovimiento;
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity
-@Table(name = "movimientos")
-public class Movimiento {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Long id;
+public class MovimientoResponseDTO {
 
     private String cuenta; //se debe cambiar el tipo
     private BigDecimal importe;
     private TipoMovimiento tipo; // DEBITO o CREDITO
     private String referencia;
     private LocalDateTime fechaCreacion;
-
 }
