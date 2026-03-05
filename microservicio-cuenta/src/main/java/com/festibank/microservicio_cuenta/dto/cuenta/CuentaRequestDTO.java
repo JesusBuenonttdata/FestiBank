@@ -1,5 +1,6 @@
 package com.festibank.microservicio_cuenta.dto.cuenta;
 
+import com.festibank.microservicio_cuenta.utils.EstadoCuenta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,6 @@ import lombok.NoArgsConstructor;
 public class CuentaRequestDTO {
 
     private int password;
-    private String estado;
+    private EstadoCuenta estado;
 
 }

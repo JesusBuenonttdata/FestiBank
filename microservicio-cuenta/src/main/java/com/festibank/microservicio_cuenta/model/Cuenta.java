@@ -1,6 +1,8 @@
 package com.festibank.microservicio_cuenta.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.festibank.microservicio_cuenta.utils.EstadoCuenta;
+import com.festibank.microservicio_cuenta.utils.TipoCuenta;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,8 +25,8 @@ public class Cuenta {
     private String nombre;
     private int password; //es diferente al usuario , se genera sola
     private String iban; // se genera automáticamente
-    private String tipo; // Si es cuenta corriente o ahorro
-    private String estado; // Si la cuenta está activa o bloqueada
+    private TipoCuenta tipo; // Si es cuenta corriente o ahorro
+    private EstadoCuenta estado; // Si la cuenta está activa o bloqueada
     private BigDecimal saldo ; // Empieza desde 0
 
     // Un usuario puede tener varias cuentas

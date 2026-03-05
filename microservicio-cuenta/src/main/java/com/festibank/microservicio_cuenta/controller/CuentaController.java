@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping("/cuenta")
 public class CuentaController {
@@ -30,18 +32,28 @@ public class CuentaController {
         return ResponseEntity.ok(service.detallePorNombrePassword(cuentaDTO));
     }
 
-//    @PostMapping
-//    @Operation(description = "Crea una cuenta")
-//    public ResponseEntity<CuentaResponseDTO> crear(
-//            @RequestBody CuentaRequestDTOCreate cuentaRequestDTOCreate) {
-//        return new ResponseEntity<>(service.crear(cuentaRequestDTOCreate), HttpStatus.CREATED);
-//    }
+    @PostMapping("/{id}")
+    @Operation(description = "Crea una cuenta")
+    public ResponseEntity<CuentaResponseDTO> crear(
+            @PathVariable Long id,
+            @RequestBody CuentaRequestDTOCreate cuentaRequestDTOCreate) {
+        return new ResponseEntity<>(service.crearPorIdUsuario(cuentaRequestDTOCreate , id),
+        HttpStatus.CREATED);
+    }
 
     @PutMapping("/{id}")
     @Operation(description = "Edita una cuenta solo password y estado")
     public ResponseEntity<?>editar(@PathVariable Long id,
                                    @RequestBody CuentaRequestDTO cuentaRequestDTO){
         return ResponseEntity.ok(service.editar(id,cuentaRequestDTO));
+    }
+
+    @PutMapping("/saldo/{id}")
+    @Operation(description = "Edita el dinero de una determinada cuenta")
+    public ResponseEntity<?> editarSaldo(@PathVariable Long id,
+                                         @RequestBody BigDecimal dinero){
+
+        return ResponseEntity.ok(service.editarSaldo(id , dinero));
     }
 
     @DeleteMapping("/{id}")

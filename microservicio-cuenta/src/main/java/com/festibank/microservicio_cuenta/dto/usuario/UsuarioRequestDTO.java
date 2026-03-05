@@ -17,6 +17,6 @@ public class UsuarioRequestDTO {
     private String telefono;
     private String pais;
     private String localidad;
-    private LocalDate fechaNacimiento;
+
 
 }

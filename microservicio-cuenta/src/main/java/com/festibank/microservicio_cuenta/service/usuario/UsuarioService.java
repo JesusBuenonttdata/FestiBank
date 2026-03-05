@@ -1,10 +1,7 @@
 package com.festibank.microservicio_cuenta.service.usuario;
 
 import com.festibank.microservicio_cuenta.dto.cuenta.CuentaRequestDTOCreate;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioDTO;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTO;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTOCreate;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioResponseDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.*;
 import com.festibank.microservicio_cuenta.mapper.cuenta.CuentaMapper;
 import com.festibank.microservicio_cuenta.mapper.usuario.UsuarioMapper;
 import com.festibank.microservicio_cuenta.model.Cuenta;
@@ -31,24 +28,24 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     @Transactional(readOnly = true)
-    public UsuarioResponseDTO obtenerUsuarioPorId(Long id) {
+    public UsuarioResponseDTODetalle obtenerUsuarioPorId(Long id) {
         Usuario usuario = repository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND ,
                         "Dicho Usuario no existe"));
 
-        return UsuarioMapper.toDTO(usuario);
+        return UsuarioMapper.toDTODetalle(usuario);
 
     }
 
     @Override
     @Transactional(readOnly = true)
-    public UsuarioResponseDTO obtenerUsuarioPorNombreApellido(UsuarioDTO usuarioDTO) {
+    public UsuarioResponseDTODetalle obtenerUsuarioPorNombreApellido(UsuarioDTO usuarioDTO) {
         Usuario usuario = repository.findByNombreAndPassword(usuarioDTO.getNombreCuenta(),
                         usuarioDTO.getPassword())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND ,
                         "Dicho Usuario no existe"));
 
-        return UsuarioMapper.toDTO(usuario);
+        return UsuarioMapper.toDTODetalle(usuario);
     }
 
     @Override

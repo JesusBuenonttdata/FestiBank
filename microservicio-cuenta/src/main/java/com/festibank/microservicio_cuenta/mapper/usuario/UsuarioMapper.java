@@ -3,10 +3,14 @@ package com.festibank.microservicio_cuenta.mapper.usuario;
 import com.festibank.microservicio_cuenta.dto.usuario.UsuarioDTO;
 import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTOCreate;
 import com.festibank.microservicio_cuenta.dto.usuario.UsuarioResponseDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.UsuarioResponseDTODetalle;
+import com.festibank.microservicio_cuenta.model.Cuenta;
 import com.festibank.microservicio_cuenta.model.Usuario;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class UsuarioMapper {
@@ -36,4 +40,27 @@ public class UsuarioMapper {
         entityCreate.setFechaNacimiento(usuarioRequestDTOCreate.getFechaNacimiento());
         return entityCreate;
     }
+
+    public static UsuarioResponseDTODetalle toDTODetalle (Usuario usuario){
+        UsuarioResponseDTODetalle dtoDetallado = new UsuarioResponseDTODetalle();
+        dtoDetallado.setNombre(usuario.getNombre());
+        dtoDetallado.setApellidos(usuario.getApellidos());
+        dtoDetallado.setFechaNacimiento(usuario.getFechaNacimiento());
+        dtoDetallado.setLocalidad(usuario.getLocalidad());
+        dtoDetallado.setPais(usuario.getPais());
+        dtoDetallado.setEmail(usuario.getEmail());
+        dtoDetallado.setTelefono(usuario.getTelefono());
+
+        List<Cuenta> listcuentadetallado = new ArrayList<>();
+        List<Cuenta> usuarioCuentaList = usuario.getCuentaList();
+
+        usuarioCuentaList.forEach(usuarioCuenta -> {
+            listcuentadetallado.add(usuarioCuenta);
+        });
+
+        dtoDetallado.setCuentaList(listcuentadetallado);
+
+        return dtoDetallado;
+    }
+
 }

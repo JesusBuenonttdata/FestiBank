@@ -1,16 +1,17 @@
 package com.festibank.microservicio_cuenta.dto.usuario;
 
-import com.festibank.microservicio_cuenta.utils.TipoCuenta;
+import com.festibank.microservicio_cuenta.model.Cuenta;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioRequestDTOCreate {
+public class UsuarioResponseDTODetalle {
 
     private String nombre;
     private String apellidos;
@@ -19,8 +20,6 @@ public class UsuarioRequestDTOCreate {
     private String pais;
     private String localidad;
     private LocalDate fechaNacimiento;
-    private String nombreCuenta;
-    private String password;
-    private TipoCuenta tipoCuenta;
+    private List<Cuenta> cuentaList;
 
 }

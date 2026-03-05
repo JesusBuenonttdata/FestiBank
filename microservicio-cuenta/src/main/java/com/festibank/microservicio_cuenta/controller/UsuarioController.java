@@ -1,9 +1,6 @@
 package com.festibank.microservicio_cuenta.controller;
 
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioDTO;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTO;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioRequestDTOCreate;
-import com.festibank.microservicio_cuenta.dto.usuario.UsuarioResponseDTO;
+import com.festibank.microservicio_cuenta.dto.usuario.*;
 import com.festibank.microservicio_cuenta.service.usuario.IUsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +18,14 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     @Operation(description = "Obtiene un usuario con toda su información.")
-    public ResponseEntity<UsuarioResponseDTO> detalle(@PathVariable Long id) {
+    public ResponseEntity<UsuarioResponseDTODetalle> detalle(@PathVariable Long id) {
         return ResponseEntity.ok(service.obtenerUsuarioPorId(id));
     }
 
     @GetMapping
     @Operation(description = "Obtiene un usuario con toda la información a traves" +
             "del nombre y la contraseña.")
-    public ResponseEntity<UsuarioResponseDTO> detallePorNombrePassword(
+    public ResponseEntity<UsuarioResponseDTODetalle> detallePorNombrePassword(
             @RequestBody UsuarioDTO usuarioDTO) {
         return ResponseEntity.ok(service.obtenerUsuarioPorNombreApellido(usuarioDTO));
     }
