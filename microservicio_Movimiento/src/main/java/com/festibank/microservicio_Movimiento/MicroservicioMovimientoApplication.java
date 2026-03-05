@@ -1,13 +1,13 @@
-package com.festibank.microservicio_Portal;
+package com.festibank.microservicio_Movimiento;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroservicioPortalApplication {
+public class MicroservicioMovimientoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroservicioPortalApplication.class, args);
+		SpringApplication.run(MicroservicioMovimientoApplication.class, args);
 	}
 
 }
