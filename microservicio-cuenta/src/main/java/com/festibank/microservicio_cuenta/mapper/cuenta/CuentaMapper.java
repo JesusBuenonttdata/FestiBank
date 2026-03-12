@@ -5,8 +5,9 @@ import com.festibank.microservicio_cuenta.dto.cuenta.CuentaRequestDTOCreate;
 import com.festibank.microservicio_cuenta.dto.cuenta.CuentaResponseDTO;
 import com.festibank.microservicio_cuenta.dto.cuenta.CuentaResponseDTOView;
 import com.festibank.microservicio_cuenta.model.Cuenta;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class CuentaMapper {
 
     public static CuentaResponseDTO toDTO(Cuenta cuenta){

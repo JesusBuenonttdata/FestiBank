@@ -21,8 +21,8 @@ public class Transferencia {
     @EqualsAndHashCode.Include
     private Long id;
 
-    private String cuentaOrigen;
-    private String cuentaDestino;
+    private Long cuentaOrigenId;
+    private Long cuentaDestinoId;
     private BigDecimal importe;
     private EstadoTransferencia estado;
     private String claveIdempotencia;

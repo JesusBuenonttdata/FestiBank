@@ -1,8 +1,8 @@
 package com.festibank.microservicio_Movimiento.controller;
 
-import com.festibank.microservicio_Movimiento.dto.transferencia.TransferenciaDTO;
 import com.festibank.microservicio_Movimiento.dto.transferencia.TransferenciaRequestDTOCreate;
 import com.festibank.microservicio_Movimiento.dto.transferencia.TransferenciaResponseDTO;
+import com.festibank.microservicio_Movimiento.dto.transferencia.TransferenciaResponseDTOListado;
 import com.festibank.microservicio_Movimiento.service.transferencia.ITransferenciaService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class TransferenciaController {
 
     @GetMapping("/{cuentaId}/cuenta")
     @Operation(description = "Obtiene toda las transferencia de una cuenta determinada")
-    public ResponseEntity<List<TransferenciaResponseDTO>> listadoPorCuentaId(@PathVariable Long cuentaId){
+    public ResponseEntity<TransferenciaResponseDTOListado> listadoPorCuentaId(@PathVariable Long cuentaId){
         return ResponseEntity.ok(service.listadoPorCuentaId(cuentaId));
     }
 

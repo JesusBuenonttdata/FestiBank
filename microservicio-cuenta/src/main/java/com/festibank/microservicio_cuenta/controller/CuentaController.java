@@ -24,7 +24,7 @@ public class CuentaController {
         return ResponseEntity.ok(service.detallePorId(id));
     }
 
-    @GetMapping
+    @PostMapping
     @Operation(description = "Obtiene una cuenta con toda la información a traves" +
             "del nombre y la contraseña.")
     public ResponseEntity<CuentaResponseDTO> detallePorNombrePassword(

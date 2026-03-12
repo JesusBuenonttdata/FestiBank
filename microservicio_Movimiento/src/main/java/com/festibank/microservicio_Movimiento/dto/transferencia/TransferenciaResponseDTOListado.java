@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TransferenciaDTOListado {
+public class TransferenciaResponseDTOListado {
 
     String nombreCuenta;
-    List<TransferenciaDTO> listaTransferencia;
+    List<TransferenciaResponseDTO> listaTransferencia;
 }

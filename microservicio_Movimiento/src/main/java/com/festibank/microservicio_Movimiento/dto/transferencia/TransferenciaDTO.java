@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class TransferenciaDTO {
 
-    private String cuentaOrigen;
-    private String cuentaDestino;
+    private Long cuentaOrigenId;
+    private Long cuentaDestinoId;
     private BigDecimal importe;
     private EstadoTransferencia estado;
     private LocalDateTime fechaCreacion;

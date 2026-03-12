@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class MovimientoResponseDTO {
 
-    private String cuenta; //se debe cambiar el tipo
+    private Long cuentaId;
     private BigDecimal importe;
     private TipoMovimiento tipo; // DEBITO o CREDITO
     private String referencia;

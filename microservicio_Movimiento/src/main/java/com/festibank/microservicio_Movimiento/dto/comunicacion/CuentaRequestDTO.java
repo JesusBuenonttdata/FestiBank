@@ -1,17 +1,14 @@
-package com.festibank.microservicio_Movimiento.dto.movimiento;
+package com.festibank.microservicio_Movimiento.dto.comunicacion;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovimientoRequestDTO {
+public class CuentaRequestDTO {
 
-    private BigDecimal importe;
     private String nombre;
     private int password;
 }

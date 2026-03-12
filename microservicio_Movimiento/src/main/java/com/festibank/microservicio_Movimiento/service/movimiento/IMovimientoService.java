@@ -1,15 +1,15 @@
 package com.festibank.microservicio_Movimiento.service.movimiento;
 
+import com.festibank.microservicio_Movimiento.dto.movimiento.MovimientoRequestDTO;
 import com.festibank.microservicio_Movimiento.dto.movimiento.MovimientoResponseDTO;
+import com.festibank.microservicio_Movimiento.dto.movimiento.MovimientoResponseListDTO;
 
-import java.math.BigDecimal;
-import java.util.List;
 
 public interface IMovimientoService {
 
     MovimientoResponseDTO detalleId (Long id);
-    List<MovimientoResponseDTO> listar (Long cuentaId);
-    MovimientoResponseDTO credito (BigDecimal dinero , Long cuentaId); // ingreso de dinero
-    MovimientoResponseDTO debito (BigDecimal dinero , Long cuentaId); // retirada de dinero
+    MovimientoResponseListDTO listar (Long cuentaId);
+    MovimientoResponseDTO credito (MovimientoRequestDTO request , Long cuentaId); // ingreso de dinero
+    MovimientoResponseDTO debito (MovimientoRequestDTO request , Long cuentaId); // retirada de dinero
 
 }

@@ -11,8 +11,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class TransferenciaRequestDTOCreate {
 
-    Long cuentaOrigenId ;
-    Long cuentaDestinoId;
-    BigDecimal importe ;
-    String descripcion;
+    private String nombre;
+    private int password;
+    private Long cuentaOrigenId;
+    private Long cuentaDestinoId;
+    private BigDecimal importe;
+    private String referencia;
 }
